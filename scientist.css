@@ -9,7 +9,6 @@
 
 .column {
     background-color: rgb(170, 187, 149);
-    /* border: 0.1px solid black; */
     width: 30rem;
 }
 
@@ -25,7 +24,6 @@
 .scientist {
     height: 5rem;
     background-color: rgb(255, 255, 255);
-    /* border: 2px solid black; */
     margin: 25px;
     justify-items: center;
 }
@@ -33,11 +31,11 @@
 .scient-name {
     text-align-last: center;
     padding: 20px;
-    font-size: xx-large;
+    font-size: 20px;
     color: rgb(44, 37, 33);
 }
 
-.detailedinfo {
+.detailed-info {
     background-color: rgb(255, 255, 255);
     height: 20rem;
     margin: 25px;
