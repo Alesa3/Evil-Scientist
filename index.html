@@ -2,29 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="scientist.css" rel="stylesheet">
-    <title>Evil Scientist</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scientist.css" />
+    <title>Document</title>
 </head>
 
-
 <body>
-    <header class="container">
-        <section class="card-white" id="introduction">
-            <h1>Evil Scientist Database</h1>
-            <div id="box1">
-                Box 1
-            </div>
+    <section class="container">
+        <section class="column">
+            <form class="form">
+                <p>Only Evil Scientists are welcome.</p>
+                <label for="Name">Name</label>
+                <input type="text" id="input" name="name" /><br></br>
+                <label for="Age">Age</label>
+                <input type="text" id="input" name="age" /><br></br>
+                <label for="henchmen">Number of Henchmen</label>
+                <input type="text" id="input" name="henchmen" /><br></br>
+                <label for="info">Description</label>
+                <input type="text" id="input" name="info" />
+                <button>Add Evil Scientist</button>
+            </form>
+        </section>
+        <article class="column">
 
-            <div id="box2">
-                Box 2
-            </div>
+            <div class="scientist">
+                <p class="scient-name">
+                    Kimi Cha
 
-    </header>
+                    <button>Go to</button>
+                </p>
+            </div>
+            <div class="scientist"></div>
+            <div class="scientist"></div>
+            <div class="scientist"></div>
+            <div class="scientist"></div>
+            <div class="scientist"></div>
+        </article>
+        <div class="column">
+            <div class="detailedinfo">
+                <img src="" alt="" />
+            </div>
+            <ul>
+                Info about the selected scientist
+
+            </ul>
+        </div>
     </section>
-
 </body>
 
 </html>
