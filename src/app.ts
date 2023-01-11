@@ -1,5 +1,5 @@
 type Scientist = {
-    name: string,
+    nickname: string,
     age: number,
     henchmen: number,
     description: string
@@ -7,26 +7,35 @@ type Scientist = {
 
 const listOfScientists: Scientist[] = [
     {
-        name: "Mr Old",
+        nickname: "Mr Young",
         age: 300,
         henchmen: 2,
         description: "Old Evil Scientist who is young at heart."
 
     },
     {
-        name: "Jim",
+        nickname: "Jim",
         age: 30,
         henchmen: 6,
         description: "Likes to improvise"
 
     },
     {
-        name: "Jan",
+        nickname: "Jan",
         age: 20,
         henchmen: 8,
-        description: "Enjoys yoga besides being evil"
+        description: "Enjoys yoga and trees besides being evil"
 
     },
-];
+]
+
+
+// const allScientists = document.getElementById("allScientists") as HTMLDivElement;
+
+// const nameInput = document.querySelector('name-input') as HTMLInputElement;
+// const ageInput = document.querySelector('age-input') as HTMLInputElement;
+// const henchInput = document.querySelector('hench-input') as HTMLInputElement;
+// const infoInput = document.querySelector('infoInput') as HTMLInputElement;
+
 
 
