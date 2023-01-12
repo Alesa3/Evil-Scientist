@@ -30,8 +30,6 @@ const allScientists: Scientist[] = [
 
 ]
 
-
-
 // a function to show all Evil Scientists from the array 
 
 const showScientists = document.getElementById('show-scientists') as HTMLElement;
@@ -40,8 +38,10 @@ const detailedText = document.getElementById('detailed-text') as HTMLParagraphEl
 
 
 function printScientists() {
+    console.log("hit?")
 
     for (let i = 0; i < length; i++) {
+        console.log("men hit?")
         const createCard = document.createElement("div") as HTMLDivElement;
         createCard.className = "card";
         createCard.innerHTML = `${allScientists[i].nickname}`;
