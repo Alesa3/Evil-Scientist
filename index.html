@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scientist.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
 </head>
 
@@ -22,36 +22,27 @@
                 <input type="text" id="input" name="henchmen" /><br></br>
                 <label for="info-input">Description</label>
                 <input type="text" id="input" name="info" />
-                <button>Add Evil Scientist</button>
+                <button> Add Evil Scientist</button>
             </form>
         </section>
 
-
-
-        <article class="column">
+        <section id="show-scientists">
             <h2>
                 <center>All Scientists</center>
             </h2>
+        </section>
 
-            <div id="allScientists"></div>
-            <div class="scientist">
-                <p class="scient-name">
-                    Kimi Cha
 
-                    <button>Go to</button>
-                </p>
-            </div>
-            <div class="scientist"></div>
-            <div class="scientist"></div>
-            <div class="scientist"></div>
-            <div class="scientist"></div>
-            <div class="scientist"></div>
-        </article>
-        <div class="column">
+        <section class="detailed-scientists">
             <h2>
-                <center>All Scientists</center>
+                <center>Detailed info</center>
             </h2>
-            <div class="detailed-info">
+            <div id="unorder-list">
+                <p id="detailed-text"></p>
+        </section>
+    </article>
+    </div>
+    <script defer src="dist/demo.js"></script>
 
 </body>
 

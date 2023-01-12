@@ -21,19 +21,6 @@
     margin: 20px;
 }
 
-.scientist {
-    height: 5rem;
-    background-color: rgb(255, 255, 255);
-    margin: 25px;
-    justify-items: center;
-}
-
-.scient-name {
-    text-align-last: center;
-    padding: 20px;
-    font-size: 20px;
-    color: rgb(44, 37, 33);
-}
 
 .detailed-info {
     background-color: rgb(255, 255, 255);
