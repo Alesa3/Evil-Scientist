@@ -1,9 +1,12 @@
+
+
 type Scientist = {
     nickname: string,
     age: number,
     henchmen: number,
     description: string,
 }
+
 
 const allScientists: Scientist[] = [
     {
@@ -18,7 +21,6 @@ const allScientists: Scientist[] = [
         age: 30,
         henchmen: 6,
         description: "Likes to improvise with evil stuff"
-
     },
     {
         nickname: "Truffle",
@@ -29,6 +31,7 @@ const allScientists: Scientist[] = [
     },
 
 ]
+
 
 // a function to show all Evil Scientists from the array 
 
@@ -52,6 +55,7 @@ function printScientists() {
         showScientists.append(cardButton);
 
     }
+    console.log(printScientists);
 
 
     //listener when clicking on the nickname
@@ -68,14 +72,14 @@ function printScientists() {
 
 // a function to add a new scientist
 
-const buttonAdd = document.getElementById('button-add') as HTMLInputElement;
+const buttonAdd = document.getElementById('button-add') as HTMLButtonElement;
 const nameInput = document.getElementById('name-input') as HTMLInputElement;
 const ageInput = document.getElementById('age-input') as HTMLInputElement;
 const henchInput = document.getElementById('hench-input') as HTMLInputElement;
 const infoInput = document.getElementById('info-input') as HTMLInputElement;
 
-buttonAdd.addEventListener('click', function (event) {
-    event.preventDefault();
+buttonAdd.addEventListener('click', (e) => {
+    e.preventDefault();
 
     const newScientist: Scientist = {
         nickname: nameInput.value,
@@ -86,7 +90,7 @@ buttonAdd.addEventListener('click', function (event) {
 
     allScientists.push(newScientist);
     showScientists.innerHTML = "";
+    console.log(newScientist);
     printScientists();
 });
 
-printScientists();
