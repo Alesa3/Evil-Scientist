@@ -18,13 +18,13 @@ const allScientists: Scientist[] = [
         nickname: "Jinglebell",
         age: 30,
         henchmen: 6,
-        description: "Likes to improvise with evil stuff"
+        description: "Likes to improvise with evil stuff."
     },
     {
         nickname: "Truffle",
         age: 20,
         henchmen: 8,
-        description: "Enjoys yoga and trees"
+        description: "Enjoys yoga and trees."
 
     },
 
@@ -46,7 +46,7 @@ const detailedHench = document.getElementById('detailed-hench') as HTMLParagraph
 function showArrScientists() {
 
     //empties the array so it wont be duplicated
-    showScientists.innerHTML = "";
+
     for (let i = 0; i < allScientists.length; i++) {
 
         //creating a card with the scientists name and a button in order to click and find out more. We append it to the showScientists html.
@@ -58,17 +58,19 @@ function showArrScientists() {
         cardButton.innerHTML = "About";
         showScientists.append(createCard);
         showScientists.append(cardButton);
+        const allSciHeader = document.createElement("h2") as HTMLHeadingElement;
+        showScientists.append(allSciHeader);
     }
 
 
-    //listener when clicking on the nickname
+    //listener when clicking on the About button
     const aboutButton = document.getElementsByClassName("showAll");
     for (let i = 0; i < aboutButton.length; i++) {
         aboutButton[i].addEventListener("click", function () {
-            detailedName.innerHTML = allScientists[i].nickname;
-            detailedAge.innerHTML = allScientists[i].age.toString();
-            detailedHench.innerHTML = allScientists[i].henchmen.toString();
-            detailedText.innerHTML = allScientists[i].description;
+            detailedName.innerHTML = `Name: ${allScientists[i].nickname}`;
+            detailedText.innerHTML = `Description: ${allScientists[i].description}`;
+            detailedAge.innerHTML = `Age: ${allScientists[i].age.toString()} years old`;
+            detailedHench.innerHTML = `Amount of Henchmen: ${allScientists[i].henchmen.toString()}`;
         })
     }
 }
