@@ -45,6 +45,7 @@ const detailedHench = document.getElementById('detailed-hench') as HTMLParagraph
 // a function to show all Evil Scientists from the array.
 function showArrScientists() {
 
+    showScientists.innerHTML = "";
     //empties the array so it wont be duplicated
 
     for (let i = 0; i < allScientists.length; i++) {
