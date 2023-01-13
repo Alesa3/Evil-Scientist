@@ -1,5 +1,3 @@
-
-
 type Scientist = {
     nickname: string,
     age: number,
@@ -31,66 +29,69 @@ const allScientists: Scientist[] = [
     },
 
 ]
-
+console.log(allScientists);
 
 // a function to show all Evil Scientists from the array 
 
+
+const buttonAdd = document.getElementById('button-add') as HTMLButtonElement;
+let unorderList = document.getElementById('unorder-list') as HTMLElement;
 const showScientists = document.getElementById('show-scientists') as HTMLElement;
 const detailedScientist = document.getElementById('detailed-scientist') as HTMLElement;
 const detailedText = document.getElementById('detailed-text') as HTMLParagraphElement;
+// const sectionId = document.querySelector('.div') as HTMLElement;
 
 
-function printScientists() {
-    console.log("hit?")
+function printArrScientists() {
 
-    for (let i = 0; i < length; i++) {
-        console.log("men hit?")
+    for (let i = 0; i < allScientists.length; i++) {
+
         const createCard = document.createElement("div") as HTMLDivElement;
         createCard.className = "card";
-        createCard.innerHTML = `${allScientists[i].nickname}`;
+        createCard.innerHTML = allScientists[i].nickname;
         const cardButton = document.createElement('button');
-        cardButton.className = "showScientists";
-        cardButton.innerHTML = "About";
+        cardButton.className = "showAll";
+        cardButton.innerHTML = "Find out more";
         showScientists.append(createCard);
         showScientists.append(cardButton);
-
     }
-    console.log(printScientists);
-
 
     //listener when clicking on the nickname
-    const aboutButton = document.getElementsByClassName("showScientists");
+    const aboutButton = document.getElementsByClassName("showAll");
 
-    for (let s = 0; s < aboutButton.length; s++) {
-        aboutButton[s].addEventListener("click", function () {
-            detailedText.innerHTML = `${allScientists[s].description}`
+    for (let i = 0; i < aboutButton.length; i++) {
+        aboutButton[i].addEventListener("click", function () {
+            // let listElement = document.createElement('li');
+            // unorderList.append(listElement)
+            detailedText.innerHTML = allScientists[i].nickname, allScientists[i].age, allScientists[i].henchmen, allScientists[i].description;
 
         })
     }
 
 }
 
-// a function to add a new scientist
-
-const buttonAdd = document.getElementById('button-add') as HTMLButtonElement;
-const nameInput = document.getElementById('name-input') as HTMLInputElement;
-const ageInput = document.getElementById('age-input') as HTMLInputElement;
-const henchInput = document.getElementById('hench-input') as HTMLInputElement;
-const infoInput = document.getElementById('info-input') as HTMLInputElement;
+// a function to add a new scientist and push it to the existing array
 
 buttonAdd.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const newScientist: Scientist = {
-        nickname: nameInput.value,
-        age: parseInt(ageInput.value),
-        henchmen: parseInt(henchInput.value),
-        description: infoInput.value,
+    const nameInput = document.getElementById('name-input') as HTMLInputElement;
+    const ageInput = document.getElementById('age-input') as HTMLInputElement;
+    const henchInput = document.getElementById('hench-input') as HTMLInputElement;
+    const infoInput = document.getElementById('info-input') as HTMLInputElement;
+
+
+    if (nameInput.value.length > 0, ageInput.value.length > 0, henchInput.value.length > 0) {
+        const newScientist: Scientist = {
+            nickname: nameInput.value,
+            age: parseInt(ageInput.value),
+            henchmen: parseInt(henchInput.value),
+            description: infoInput.value,
+        }
+
+        allScientists.push(newScientist);
+        showScientists.innerHTML = "";
+        console.log(newScientist);
+        printArrScientists();
     }
-
-    allScientists.push(newScientist);
-    showScientists.innerHTML = "";
-    console.log(newScientist);
-    printScientists();
 });
-
