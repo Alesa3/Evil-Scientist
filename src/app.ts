@@ -76,7 +76,7 @@ function showArrScientists() {
     }
 }
 
-// a function to add a new scientist and push it to the existing array
+// add a new scientist and push it to the existing array
 buttonAdd.addEventListener('click', function (event) {
     event.preventDefault();
 
