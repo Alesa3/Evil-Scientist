@@ -29,59 +29,63 @@ const allScientists: Scientist[] = [
     },
 
 ]
-console.log(allScientists);
+// console.log(allScientists);
 
-// a function to show all Evil Scientists from the array 
-
-
+// retrieve data from HTML
 const buttonAdd = document.getElementById('button-add') as HTMLButtonElement;
 let unorderList = document.getElementById('unorder-list') as HTMLElement;
-const showScientists = document.getElementById('show-scientists') as HTMLElement;
+const showScientists = document.getElementById('show-arrScientists') as HTMLElement;
 const detailedScientist = document.getElementById('detailed-scientist') as HTMLElement;
 const detailedText = document.getElementById('detailed-text') as HTMLParagraphElement;
-// const sectionId = document.querySelector('.div') as HTMLElement;
+const detailedName = document.getElementById('detailed-name') as HTMLParagraphElement;
+const detailedAge = document.getElementById('detailed-age') as HTMLParagraphElement;
+const detailedHench = document.getElementById('detailed-hench') as HTMLParagraphElement;
 
 
-function printArrScientists() {
+// a function to show all Evil Scientists from the array.
+function showArrScientists() {
 
+    //empties the array so it wont be duplicated
+    showScientists.innerHTML = "";
     for (let i = 0; i < allScientists.length; i++) {
 
+        //creating a card with the scientists name and a button in order to click and find out more. We append it to the showScientists html.
         const createCard = document.createElement("div") as HTMLDivElement;
         createCard.className = "card";
         createCard.innerHTML = allScientists[i].nickname;
         const cardButton = document.createElement('button');
         cardButton.className = "showAll";
-        cardButton.innerHTML = "Find out more";
+        cardButton.innerHTML = "About";
         showScientists.append(createCard);
         showScientists.append(cardButton);
     }
 
+
     //listener when clicking on the nickname
     const aboutButton = document.getElementsByClassName("showAll");
-
     for (let i = 0; i < aboutButton.length; i++) {
         aboutButton[i].addEventListener("click", function () {
-            // let listElement = document.createElement('li');
-            // unorderList.append(listElement)
-            detailedText.innerHTML = allScientists[i].nickname, allScientists[i].age, allScientists[i].henchmen, allScientists[i].description;
-
+            detailedName.innerHTML = allScientists[i].nickname;
+            detailedAge.innerHTML = allScientists[i].age.toString();
+            detailedHench.innerHTML = allScientists[i].henchmen.toString();
+            detailedText.innerHTML = allScientists[i].description;
         })
     }
-
 }
 
 // a function to add a new scientist and push it to the existing array
-
-buttonAdd.addEventListener('click', (e) => {
-    e.preventDefault();
+buttonAdd.addEventListener('click', function (event) {
+    event.preventDefault();
 
     const nameInput = document.getElementById('name-input') as HTMLInputElement;
     const ageInput = document.getElementById('age-input') as HTMLInputElement;
     const henchInput = document.getElementById('hench-input') as HTMLInputElement;
     const infoInput = document.getElementById('info-input') as HTMLInputElement;
+    const errorMessage = document.getElementById('error-message') as HTMLElement;
 
 
     if (nameInput.value.length > 0, ageInput.value.length > 0, henchInput.value.length > 0) {
+        errorMessage.innerHTML = "";
         const newScientist: Scientist = {
             nickname: nameInput.value,
             age: parseInt(ageInput.value),
@@ -90,8 +94,22 @@ buttonAdd.addEventListener('click', (e) => {
         }
 
         allScientists.push(newScientist);
-        showScientists.innerHTML = "";
-        console.log(newScientist);
-        printArrScientists();
+        showArrScientists();
+
+        alert('Your Evil Scientist has been added!');
+    } else {
+        (errorMessage.innerHTML = 'You need to add something!');
     }
-});
+
+
+    //clearing the form 
+    nameInput.value = "";
+    ageInput.value = "";
+    henchInput.value = "";
+    infoInput.value = "";
+
+}
+);
+
+
+showArrScientists();

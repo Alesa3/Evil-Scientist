@@ -32,7 +32,33 @@ button {
     margin: 20px;
 }
 
-#input {
+input {
     width: 210px;
     height: 20px;
+}
+
+#detailed-name {
+    padding: 20px;
+    margin: 20px;
+}
+
+#detailed-age {
+    padding: 20px;
+    margin: 20px;
+}
+
+#detailed-hench {
+    padding: 20px;
+    margin: 20px;
+}
+
+#detailed-text {
+    padding: 20px;
+    margin: 20px;
+}
+
+.card {
+
+    margin: 30px;
+    align-items: right;
 }

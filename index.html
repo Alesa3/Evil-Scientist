@@ -15,35 +15,40 @@
             <form class="form">
                 <h2>Add Evil Scientist</h2>
                 <label for="name-input">Name</label>
-                <input type="text" id="input" name="name" /><br></br>
+                <input type="text" id="name-input" name="name" /><br></br>
                 <label for="age-input">Age</label>
-                <input type="text" id="input" name="age" /><br></br>
+                <input type="text" id="age-input" name="age" /><br></br>
                 <label for="hench-input">Number of Henchmen</label>
-                <input type="text" id="input" name="henchmen" /><br></br>
+                <input type="text" id="hench-input" name="henchmen" /><br></br>
                 <label for="info-input">Description</label>
-                <input type="text" id="input" name="info" />
+                <input type="text" id="info-input" name="info" />
+                <span id="error-message"></span>
                 <button id="button-add">Add</button>
             </form>
         </section>
 
-        <section id="show-scientists">
+        <section class="column" id="show-arrScientists">
             <h2>
                 <center>All Scientists</center>
             </h2>
         </section>
 
 
-        <section class="detailed-scientists">
+        <section class="column" id="info-scientists">
             <h2>
                 <center>Detailed info</center>
             </h2>
+
+
+            <p id="detailed-name"></p>
+            <p id="detailed-text"></p>
+            <p id="detailed-age"></p>
+            <p id="detailed-hench"></p>
             <!-- <section id="sel-name">Nickname</section>
             <section id="sel-age">Age</section>
             <section id="sel-hench">Henchmen</section>
             <section id="sel-info">Description</section> -->
 
-
-            <p id="detailed-text"></p>
         </section>
     </article>
     </ul>
